@@ -1,5 +1,5 @@
-// Paste the deployed Google Apps Script Web App URL here.
-const GOOGLE_SCRIPT_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+// Google Apps Script Web App endpoint for Mahila Elevation.
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyRYm8E6tUwd0BpotSlHv9TIyoZPdXCrIbkXx_m9_O8zGpcIzg3ylsOi3s6zXmYDimdhg/exec";
 
 const form = document.getElementById("leadForm");
 const submitBtn = document.getElementById("submitBtn");
@@ -19,10 +19,6 @@ form.addEventListener("submit", async (event) => {
   const consent = document.getElementById("consent").checked;
   const website = document.getElementById("website").value;
 
-  if (GOOGLE_SCRIPT_URL.includes("PASTE_YOUR_")) {
-    showMessage("The form is ready, but the Google Sheet connection still needs to be configured.", "error");
-    return;
-  }
   if (name.length < 2) return showMessage("Please enter your full name.", "error");
   if (!/^[6-9]\d{9}$/.test(mobile)) return showMessage("Please enter a valid 10-digit Indian mobile number.", "error");
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showMessage("Please enter a valid email address.", "error");
@@ -44,6 +40,8 @@ form.addEventListener("submit", async (event) => {
   };
 
   try {
+    // Apps Script accepts the JSON string through doPost(e.postData.contents).
+    // no-cors is used because GitHub Pages and Apps Script are different origins.
     await fetch(GOOGLE_SCRIPT_URL, {
       method: "POST",
       mode: "no-cors",
@@ -66,10 +64,12 @@ function setLoading(loading) {
   buttonText.textContent = loading ? "Submitting..." : "Submit My Details";
   spinner.classList.toggle("hidden", !loading);
 }
+
 function showMessage(message, type) {
   formMessage.textContent = message;
   formMessage.className = `form-message ${type}`;
 }
+
 function clearMessage() {
   formMessage.textContent = "";
   formMessage.className = "form-message";
