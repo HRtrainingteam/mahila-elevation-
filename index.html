@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8e315f">
+  <meta name="description" content="Mahila Elevation — empowering women to take confident steps towards financial independence.">
+  <title>Mahila Elevation | Financial Independence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-glow glow-one"></div>
+  <div class="page-glow glow-two"></div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Mahila Elevation home">
+        <span class="brand-mark">ME</span>
+        <span>Mahila <strong>Elevation</strong></span>
+      </a>
+      <div class="nav-pill">FINANCIAL INDEPENDENCE</div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span></span> YOUR NEXT STEP STARTS HERE</div>
+        <h1>Own your<br><em>financial future.</em></h1>
+        <p class="lead">The Mahila Elevation session is about confidence, awareness and making informed financial choices. Tell us what you would like help with and take the next step.</p>
+        <div class="hero-stats">
+          <div><b>01</b><span>Understand</span></div>
+          <div><b>02</b><span>Plan</span></div>
+          <div><b>03</b><span>Grow</span></div>
+        </div>
+      </div>
+
+      <div class="visual-card reveal delay">
+        <div class="orb orb-a"></div>
+        <div class="orb orb-b"></div>
+        <div class="quote-card">
+          <div class="quote-mark">“</div>
+          <p>Your financial independence is not a destination. It is a journey you build, one informed decision at a time.</p>
+          <div class="quote-line"></div>
+          <small>MAHILA ELEVATION</small>
+        </div>
+        <div class="floating-chip chip-top">✦ Confidence</div>
+        <div class="floating-chip chip-bottom">↗ Your future, your choices</div>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <div class="container form-layout">
+        <div class="form-intro reveal">
+          <div class="eyebrow"><span></span> LET'S CONNECT</div>
+          <h2>How can we support your financial journey?</h2>
+          <p>Share a few details and select the area where you would like guidance. Our team can use this information to understand your requirement.</p>
+          <div class="trust-list">
+            <div><i>✓</i><span>Simple and personalised guidance</span></div>
+            <div><i>✓</i><span>Choose the financial area you need</span></div>
+            <div><i>✓</i><span>Your details are submitted securely to our team</span></div>
+          </div>
+        </div>
+
+        <div class="form-card reveal delay">
+          <div class="form-head">
+            <span>MAHILA ELEVATION</span>
+            <h3>Tell us about you</h3>
+            <p>Fields marked <b>*</b> are required.</p>
+          </div>
+
+          <form id="leadForm" novalidate>
+            <div class="field">
+              <label for="name">Full Name <b>*</b></label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Enter your full name" maxlength="100" required>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="mobile">Mobile Number <b>*</b></label>
+                <div class="phone-input"><span>+91</span><input id="mobile" name="mobile" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit number" maxlength="10" required></div>
+              </div>
+              <div class="field">
+                <label for="email">Email Address <b>*</b></label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="150" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="service">What financial help are you looking for? <b>*</b></label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select an area</option>
+                <option>Investment Planning</option>
+                <option>Mutual Funds</option>
+                <option>Insurance Planning</option>
+                <option>Retirement Planning</option>
+                <option>Tax Planning</option>
+                <option>Loans / Credit</option>
+                <option>Personal Financial Planning</option>
+                <option>Multiple Areas</option>
+                <option>Not Sure — I Need Guidance</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">Tell us a little more <span>(optional)</span></label>
+              <textarea id="message" name="message" rows="3" maxlength="500" placeholder="What would you like to understand or plan?"></textarea>
+            </div>
+
+            <input class="honeypot" id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+
+            <label class="consent"><input id="consent" type="checkbox" required><span>I agree to be contacted regarding the financial guidance/service selected above.</span></label>
+
+            <button id="submitBtn" type="submit"><span id="buttonText">Submit My Details</span><span id="spinner" class="spinner hidden"></span><span class="arrow">→</span></button>
+            <p id="formMessage" class="form-message" role="status"></p>
+            <p class="privacy">Your information will be used for responding to your request and related communication.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="container closing-inner">
+        <div class="closing-number">03</div>
+        <div><div class="eyebrow">THE MAHILA ELEVATION PROMISE</div><h2>Know more. Plan better. Move forward with confidence.</h2></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><span>Mahila <strong>Elevation</strong></span><span>Empowering women through financial awareness</span></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
